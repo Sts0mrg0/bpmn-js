@@ -5,10 +5,10 @@ import {
 
 import modelingModule from 'lib/features/modeling';
 import coreModule from 'lib/core';
-import connectModule from 'lib/features/connect';
-import createModule from 'lib/features/create';
 
 import bendpointsModule from 'diagram-js/lib/features/bendpoints';
+import connectModule from 'diagram-js/lib/features/connect';
+import createModule from 'diagram-js/lib/features/create';
 
 import {
   createCanvasEvent as canvasEvent
