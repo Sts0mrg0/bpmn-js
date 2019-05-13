@@ -29,7 +29,7 @@ describe('features/snapping - BpmnSnapping', function() {
     connectModule
   ];
 
-  describe('general', function() {
+  describe('on itself', function() {
 
     var diagramXML = require('./BpmnSnapping.general.bpmn');
 
@@ -74,6 +74,7 @@ describe('features/snapping - BpmnSnapping', function() {
     }));
 
   });
+
 
   describe('on Boundary Events', function() {
 
