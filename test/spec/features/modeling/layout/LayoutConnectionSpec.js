@@ -5,6 +5,7 @@ import {
 
 import modelingModule from 'lib/features/modeling';
 import coreModule from 'lib/core';
+import connectionPreviewModule from 'lib/features/connection-preview';
 
 import bendpointsModule from 'diagram-js/lib/features/bendpoints';
 import connectModule from 'diagram-js/lib/features/connect';
@@ -25,7 +26,8 @@ describe('features/modeling - layout connection', function() {
       modelingModule,
       connectModule,
       createModule,
-      bendpointsModule
+      bendpointsModule,
+      connectionPreviewModule
     ]
   }));
 
@@ -282,7 +284,12 @@ describe('features/modeling - layout connection', function() {
           var ctx = dragging.context();
           var context = ctx.data.context;
 
-          var connectionPreview = context.connection;
+          var connectionPreview = context.getConnection(
+            context.allowed,
+            context.source,
+            context.target
+          );
+
           var waypointsPreview = connectionPreview.waypoints.slice();
 
           dragging.end();
@@ -312,7 +319,12 @@ describe('features/modeling - layout connection', function() {
           var ctx = dragging.context();
           var context = ctx.data.context;
 
-          var connectionPreview = context.connection;
+          var connectionPreview = context.getConnection(
+            context.allowed,
+            context.source,
+            context.target
+          );
+
           var waypointsPreview = connectionPreview.waypoints.slice();
 
           dragging.end();
